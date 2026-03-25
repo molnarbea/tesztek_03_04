@@ -43,7 +43,7 @@ function masodfokuTeszt() {
     for (let index = 0; index < tesztEsetLista.length; index++) {
         let eredmeny = masodfoku_x(tesztEsetLista[index].a,tesztEsetLista[index].b,tesztEsetLista[index].c);
         //console.log(eredmeny)
-        console.assert(JSON.stringify(eredmeny.x1) == JSON.stringify(tesztEsetLista[index].x1) && JSON.stringify(eredmeny.x2) ==JSON.stringify(tesztEsetLista[index].x2), `elvárt: ${tesztEsetLista[index].x1}, ${tesztEsetLista[index].x2}, kapott: ${eredmeny}`);
+        console.assert(eredmeny.x1 == tesztEsetLista[index].x1 && eredmeny.x2 ==tesztEsetLista[index].x2, `elvárt: ${tesztEsetLista[index].x1}, ${tesztEsetLista[index].x2}, kapott: ${eredmeny}`);
         
     }
     console.log("Minden teszt lefutott!")
