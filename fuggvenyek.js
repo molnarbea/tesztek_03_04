@@ -21,11 +21,17 @@ export function szamjegyekOsszege(n) {
     return z;
 }
 
-export function  masodfoku_x1(a,b,c) {
-    let x1 = ((-b) + Math.sqrt(b*b-4*a*c))/(a*2)
-    return x1
-}
-export function masodfoku_x2(a,b,c) {
-    let x2 = ((-b) - Math.sqrt(b*b-4*a*c))/(a*2)
-    return x2
+export function  masodfoku_x(a,b,c) {
+    let x1;
+    let x2;
+    if(b*b-4*a*c >= 0){
+        x1=(((-b) + Math.sqrt(b*b-4*a*c))/(a*2)).toFixed(2);
+        x2=(((-b) - Math.sqrt(b*b-4*a*c))/(a*2)).toFixed(2);
+
+    }else{
+        x1 = "nincs mo";
+        x2 = "nincs mo";
+    }
+    console.log(x1,x2);
+    return {x1:x1, x2:x2};
 }
